@@ -17,6 +17,10 @@ namespace LivrariaControleEmprestimo.DATA.Repositories
             _SaveChanges = saveChanges;
         }
 
+        public RepositoryBase(bool saveChanges)
+        {
+            _SaveChanges = saveChanges;
+        }
 
         public List<T> SelecionarTodos()
         {

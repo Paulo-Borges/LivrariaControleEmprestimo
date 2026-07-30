@@ -8,7 +8,7 @@ namespace LivrariaControleEmprestimo.DATA.Repositories
 {
     public class RepositoryCliente : RepositoryBase<Cliente>, IRepositoryCliente
     {
-        public RepositoryCliente(bool saveChanges = true) : base(saveChanges)
+        public RepositoryCliente(ControleEmprestimoLivroContext context, bool saveChanges = true) : base(context, saveChanges)
         {
         }
     

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<LivrariaControleEmprestimo.DATA.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Listagem de Clientes";
+}
+
+<h1>Listagem de Clientes</h1>
+<p> 
+<a asp-action="Create" class="btn btn-primary" >Novo Usuario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>CliCpf</th>
+            <th>CliNome</th>
+            <th>CliEndereco</th>
+            <th>CliCidade</th>
+            <th>CliBairro</th>
+            <th>CliNumero</th>
+            <th>CliTelefoneCelular</th>
+            <th>CliTelefoneFixo</th>
+            <!-- Adicione aqui outras colunas do seu model Cliente -->
+            <th>
+                <a asp-action="Edit" class="btn btn-success" asp-route-id="Id">Alterar</a>
+                <a asp-action="Details" class="btn btn-primary" asp-route-id="Id">Detalhes</a>
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="Id">Excluir</a>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Cpf</td>
+                <td>@item.Nome</td>
+                <td>@item.Endereco</td>
+                <td>@item.Cidade</td>
+                <td>@item.Bairro</td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="Id">Alterar</a>
+                    <a asp-action="Details" class="btn btn-primary" asp-route-id="Id">Detalhes</a>
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="Id">Excluir</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@model LivrariaControleEmprestimo.DATA.Models.Cliente
+
+@{
+    ViewData["Title"] = "Cadastrar Cliente";
+}
+<h2>Novo Usuario</h2>
+<h4>Preencha os campos</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Create">
+            <!-- Exibe sumário de erros globais ou de validação -->
+            <div asp-validation-summary="ModelOnly" class="text-danger col-md mb-3"></div>
+
+            <!-- Campo Nome -->
+            <div class="form-group mb-3">
+                <label asp-for="Id" class="form-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+
+            <!-- Campo Nome -->
+            <div class="form-group mb-3">
+                <label asp-for="Nome" class="form-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+           
+            <div class="card">
+                <div class="card-header">Endereço</div>
+                <div class="card-body">
+                    <!-- Campo Nome -->
+                    <div class="form-group mb-3">
+                        <label asp-for="Cidade" class="form-label"></label>
+                        <input asp-for="Cidade" class="form-control" />
+                        <span asp-validation-for="Cidade" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+            </div>
+           
+
+            <!-- Botões de Ação -->
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save"></i> Salvar
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -6,9 +6,9 @@
 
 <h1>Listagem de Clientes</h1>
 <p> 
-<a asp-action="Create" class="btn btn-primary" >Novo Usuario</a>
+<a asp-action="Create" class="btn btn-primary" >Novo Cliente</a>
 </p>
-<table class="table">
+<table id="myTable" class="table">
     <thead>
         <tr>
             <th>CliCpf</th>
@@ -19,13 +19,7 @@
             <th>CliNumero</th>
             <th>CliTelefoneCelular</th>
             <th>CliTelefoneFixo</th>
-            <!-- Adicione aqui outras colunas do seu model Cliente -->
-            <th>
-                <a asp-action="Edit" class="btn btn-success" asp-route-id="Id">Alterar</a>
-                <a asp-action="Details" class="btn btn-primary" asp-route-id="Id">Detalhes</a>
-                <a asp-action="Delete" class="btn btn-danger" asp-route-id="Id">Excluir</a>
-
-            </th>
+          
         </tr>
     </thead>
     <tbody>
@@ -37,6 +31,9 @@
                 <td>@item.Endereco</td>
                 <td>@item.Cidade</td>
                 <td>@item.Bairro</td>
+                <td>@item.Numero</td>
+                <td>@item.TelefoneCelular</td>
+                <td>@item.TelefoneFixo</td>
                 <td>
                     <a asp-action="Edit" class="btn btn-warning" asp-route-id="Id">Alterar</a>
                     <a asp-action="Details" class="btn btn-primary" asp-route-id="Id">Detalhes</a>
@@ -47,3 +44,13 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        const table = new DataTable('#myTable', {
+            "language" : {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+            }
+        });
+    </script>
+}
